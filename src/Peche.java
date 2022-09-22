@@ -18,15 +18,18 @@ public class Peche extends Bateau{
     }
 
     @Override
+    public String getEtat(){
+        if (estDetruit()== true){
+            return "detruit ";
+        }
+        return "intact";
+    }
+
+    @Override
     public String toString(){
         String result;
-        result = getNom() + "avec drapeau " + super.get_drapeau() + " en (" + super.get_x() + ", " + super.get_y() + ") -> " + getEtat() + "avec à son bord " + _nbr_matelot + " matelots";
+        result = getNom() + " avec drapeau " + super.get_drapeau() + " en (" + super.get_x() + ", " + super.get_y() + ") -> " + getEtat() + " avec à son bord " + _nbr_matelot + " matelots";
         return result;
-    }
-    @Override
-    public void recoitBoulet() {
-        // TODO Auto-generated method stub
-        
     }
 
     public boolean estPacifique(){
@@ -34,13 +37,14 @@ public class Peche extends Bateau{
     }
 
     @Override
+    public void recoitBoulet() {  
+        super.coule();
+    }
+
+    @Override
     public void combat(Bateau bateau) {
-        if (estPacifique() == false){
+        if (bateau.estPacifique() == false){
             recoitBoulet();
         }
-        
-        super.coule();
-
-        
     }
 }

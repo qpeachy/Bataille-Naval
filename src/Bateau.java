@@ -40,7 +40,7 @@ public abstract class Bateau {
     }
 
     public boolean estDetruit(){
-        return estDetruit();
+        return _detruit;
     }
 
     public double distance(Bateau autreBateau){
@@ -70,19 +70,21 @@ public abstract class Bateau {
         return nom;
     }
 
+
     public String getEtat(){
-        if (_detruit == true){
-            return "detruit ";
+        String result = " intact ";
+        if (_detruit){
+            result =  "detruit ";
         }
-        else {
-            return " intact ";
-        } 
+        return result;
     }
+
+    public abstract boolean estPacifique();
 
     @Override
     public String toString(){
         String result;
-        result = getNom() + "avec drapeau " + _drapeau + " en (" + _x + ", " + _y + ") -> " + getEtat();
+        result = getNom() + " avec drapeau " + _drapeau + " en (" + _x + ", " + _y + ") -> " + getEtat();
         return result;
     }
 
@@ -92,7 +94,7 @@ public abstract class Bateau {
 
     public void rencontre(Bateau bateau){
         if (_drapeau != bateau._drapeau & distance(bateau) < BatailleNavale.RAYON_RENCONTRE){
-
+            combat(bateau);
         }
     }
 

@@ -7,6 +7,7 @@ public class Pirate extends Bateau{
     public Pirate(int x, int y, int _drapeau, String capitaine, boolean endommager) {
         super(x, y, _drapeau);
         this._capitaine = capitaine;
+        this._endommager = endommager;
     }
     public Pirate(int x, int y, int _drapeau, boolean endommager) {
         super(x, y, _drapeau);
@@ -14,17 +15,20 @@ public class Pirate extends Bateau{
         this._capitaine = CAPITAINE_DEFAULT;
     }
 
-    public String getEtat(){
-       
-        if(_endommager == true){
-            return "ayant subi des dommages ";
-        }
+    @Override
+    public String getEtat() {       
+
         if (super.estDetruit() == true){
             return "detruit ";
         }
-        else {
-            return " intact ";
-        } 
+        else{
+            if(_endommager){
+                return "ayant subi des dommages ";
+            }
+            else{
+                return "intact";
+            }  
+        }
     }
 
     public String getNom(){
@@ -36,23 +40,29 @@ public class Pirate extends Bateau{
     @Override
     public String toString(){
         String result;
-        result = getNom() + "avec drapeau " + super.get_drapeau() + " en (" + super.get_x() + ", " + super.get_y() + ") -> " + getEtat() + "avec à son bord " + _capitaine;
+        result = getNom() + " avec drapeau " + super.get_drapeau() + " en (" + super.get_x() + ", " + super.get_y() + ") -> " + getEtat() + " avec à son bord " + _capitaine;
         return result;
     }
 
-    public boolean pacifique(){
+    public boolean estPacifique(){
         return false;
     }
 
     @Override
     public void recoitBoulet() {
-        // TODO Auto-generated method stub
-        
+        if (_endommager == false){
+            _endommager = true;
+        }
+        else{
+            super.coule();
+        }
     }
+
     @Override
     public void combat(Bateau bateau) {
-        recoitBoulet();
-        if ()
-        
+        if (bateau.estPacifique() == false){
+            recoitBoulet();
+        }
+        bateau.recoitBoulet();
     }
 }

@@ -35,80 +35,80 @@ public class BatailleNavale {
         System.out.println(ship1);
         System.out.println(ship2);
 
-        // // Test de la partie 2
-        // System.out.println();
-        // System.out.println("***Test de la partie 2***");
-        // System.out.println();
+        // Test de la partie 2
+        System.out.println();
+        System.out.println("***Test de la partie 2***");
+        System.out.println();
 
-        // // deux vaisseaux sont enemis s'ils ont des drapeaux differents
+        // deux vaisseaux sont enemis s'ils ont des drapeaux differents
 
-        // System.out.println("Bateau pirate et marchand ennemis (trop loins):");
-        // // bateau pirate intact
-        // ship1 = new Pirate(0, 0, 1, false);
-        // ship2 = new Peche(0, 25, 2);
-        // System.out.println(ship1);
-        // System.out.println(ship2);
-        // ship1.rencontre(ship2);
-        // System.out.println("Apres la rencontre:");
-        // System.out.println(ship1);
-        // System.out.println(ship2);
-        // System.out.println();
+        System.out.println("Bateau pirate et marchand ennemis (trop loins):");
+        // bateau pirate intact
+        ship1 = new Pirate(0, 0, 1, false);
+        ship2 = new Peche(0, 25, 2);
+        System.out.println(ship1);
+        System.out.println(ship2);
+        ship1.rencontre(ship2);
+        System.out.println("Apres la rencontre:");
+        System.out.println(ship1);
+        System.out.println(ship2);
+        System.out.println();
 
-        // System.out.println("Bateau pirate et marchand ennemis (proches):");
-        // // bateau pirate intact
-        // ship1 = new Pirate(0, 0, 1, false);
-        // ship2 = new Peche(2, 0, 2);
-        // System.out.println(ship1);
-        // System.out.println(ship2);
-        // ship1.rencontre(ship2);
-        // System.out.println("Apres la rencontre:");
-        // System.out.println(ship1);
-        // System.out.println(ship2);
-        // System.out.println();
+        System.out.println("Bateau pirate et marchand ennemis (proches):");
+        // bateau pirate intact
+        ship1 = new Pirate(0, 0, 1, false);
+        ship2 = new Peche(2, 0, 2);
+        System.out.println(ship1);
+        System.out.println(ship2);
+        ship1.rencontre(ship2);
+        System.out.println("Apres la rencontre:");
+        System.out.println(ship1);
+        System.out.println(ship2);
+        System.out.println();
 
-        // System.out.println("Bateau pirate et marchand amis (proches):");
-        // // bateau pirate intact
-        // ship1 = new Pirate(0, 0, 1, false);
-        // ship2 = new Peche(2, 0, 1);
-        // System.out.println(ship1);
-        // System.out.println(ship2);
-        // ship1.rencontre(ship2);
-        // System.out.println("Apres la rencontre:");
-        // System.out.println(ship1);
-        // System.out.println(ship2);
-        // System.out.println();
+        System.out.println("Bateau pirate et marchand amis (proches):");
+        // bateau pirate intact
+        ship1 = new Pirate(0, 0, 1, false);
+        ship2 = new Peche(2, 0, 1);
+        System.out.println(ship1);
+        System.out.println(ship2);
+        ship1.rencontre(ship2);
+        System.out.println("Apres la rencontre:");
+        System.out.println(ship1);
+        System.out.println(ship2);
+        System.out.println();
 
-        // System.out.println("Deux bateaux pirates ennemis intacts (proches):");
-        // // bateaux pirates intacts
-        // ship1 = new Pirate(0, 0, 1, false);
-        // ship2 = new Pirate(2, 0, 2, false);
-        // System.out.println(ship1);
-        // System.out.println(ship2);
-        // ship1.rencontre(ship2);
-        // System.out.println("Apres la rencontre:");
-        // System.out.println(ship1);
-        // System.out.println(ship2);
-        // System.out.println();
+        System.out.println("Deux bateaux pirates ennemis intacts (proches):");
+        // bateaux pirates intacts
+        ship1 = new Pirate(0, 0, 1, false);
+        ship2 = new Pirate(2, 0, 2, false);
+        System.out.println(ship1);
+        System.out.println(ship2);
+        ship1.rencontre(ship2);
+        System.out.println("Apres la rencontre:");
+        System.out.println(ship1);
+        System.out.println(ship2);
+        System.out.println();
 
-        // System.out.println("Un bateau pirate intact et un avec dommages, ennemis:");
-        // // bateau pirate intact
-        // Bateau ship3 = new Pirate(0, 2, 3, false);
-        // System.out.println(ship1);
-        // System.out.println(ship3);
-        // ship3.rencontre(ship1);
-        // System.out.println("Apres la rencontre:");
-        // System.out.println(ship1);
-        // System.out.println(ship3);
-        // System.out.println();
+        System.out.println("Un bateau pirate intact et un avec dommages, ennemis:");
+        // bateau pirate intact
+        Bateau ship3 = new Pirate(0, 2, 3, false);
+        System.out.println(ship1);
+        System.out.println(ship3);
+        ship3.rencontre(ship1);
+        System.out.println("Apres la rencontre:");
+        System.out.println(ship1);
+        System.out.println(ship3);
+        System.out.println();
 
-        // System.out.println("Deux bateaux pirates ennemis avec dommages:");
-        // System.out.println(ship2);
-        // System.out.println(ship3);
-        // ship3.rencontre(ship2);
-        // System.out.println("Apres la rencontre:");
-        // System.out.println(ship2);
-        // System.out.println(ship3);
-        // System.out.println();
+        System.out.println("Deux bateaux pirates ennemis avec dommages:");
+        System.out.println(ship2);
+        System.out.println(ship3);
+        ship3.rencontre(ship2);
+        System.out.println("Apres la rencontre:");
+        System.out.println(ship2);
+        System.out.println(ship3);
+        System.out.println();
         
     }
     
